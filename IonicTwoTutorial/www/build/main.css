@@ -4758,6 +4758,18 @@
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "BebasNeue";
+  font-style: normal;
+  src: 'local("Bebas Neue"), url("../assets/fonts/BebasNeue.ttf") format("truetype")';
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  font-style: normal;
+  src: 'local("Bebas Neue"), url("../assets/fonts/BebasNeue.ttf") format("truetype")';
+}
+
 ion-action-sheet {
   position: absolute;
   top: 0;
@@ -25338,55 +25350,6 @@ page-home .center {
   text-align: center;
 }
 
-page-home .ionic-logo {
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  width: 87px;
-  height: 87px;
-  border: 3.5px solid #5E86C4;
-  border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-animation: spin 2s infinite linear;
-  -webkit-animation: spin 2s infinite linear;
-}
-
-page-home .ionic-logo:after {
-  content: '';
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  background: #5E86C4;
-  top: 50%;
-  left: 50%;
-  margin-left: -19px;
-  margin-top: -19px;
-  border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-}
-
-page-home .ionic-logo:before {
-  content: '';
-  background: #5E86C4;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  margin-left: -7px;
-  border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
+page-home ion-icon {
+  font-size: 2.2em;
 }

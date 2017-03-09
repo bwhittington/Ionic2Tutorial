@@ -76,3 +76,44 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$global-font-family: "BebasNeue";
+$global-font-style: normal;
+$global-font-src: 'local("Bebas Neue"), url("../assets/fonts/BebasNeue.ttf") format("truetype")';
+
+@font-face{
+    font-family: $global-font-family;
+    font-style: $global-font-style;
+    src: $global-font-src;
+}
+
+@font-face{
+    font-family: $global-font-family;
+    font-style: $global-font-style;
+    src: $global-font-src;
+}
+
+// using your font-face
+@mixin Bebas-Neue {
+     font-family: "BebasNeue", BebasNeue, sans-serif;
+     font-weight:300;
+     font-style: normal;
+}
+
+@mixin Bebas-Neue-Italic {
+     font-family: "BebasNeue", BebasNeue, sans-serif;
+     font-weight:300;
+     font-style: italic;
+}
+
+@mixin Bebas-Neue-Bold {
+     font-family: "BebasNeue", BebasNeue, sans-serif;
+     font-weight: 600;
+     font-style: normal;
+}
+
+@mixin Bebas-Neue-Bold-Italic {
+     font-family: "BebasNeue", BebasNeue, sans-serif;
+     font-weight: 600;
+     font-style: italic;
+}
