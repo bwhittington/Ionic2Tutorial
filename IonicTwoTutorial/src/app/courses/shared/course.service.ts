@@ -3,7 +3,9 @@ import { courses } from './course.mocks';
 
 @Injectable()
 export class CourseService {
-    getCourses() {
-        return Promise.resolve(courses);
+    constructor() { }
+
+    public getCourses() {
+        return courses;
     }
 }
