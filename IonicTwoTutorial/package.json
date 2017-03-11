@@ -1,14 +1,14 @@
 {
+  "name": "io.cordova.myapp0524e3",
   "author": "bwhittington",
-  "cordovaPlatforms": [],
-  "cordovaPlugins": [
-    "cordova-plugin-whitelist",
-    "cordova-plugin-console",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-device",
-    "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
-  ],
+  "homepage": "https://github.com/bwhittington/Ionic2Tutorial",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
   "dependencies": {
     "@angular/common": "2.4.8",
     "@angular/compiler": "2.4.8",
@@ -19,43 +19,27 @@
     "@angular/platform-browser": "2.4.8",
     "@angular/platform-browser-dynamic": "2.4.8",
     "@angular/platform-server": "2.4.8",
-    "@angular/tsc-wrapped": "0.5.2",
-    "@ionic/storage": "1.1.9",
+    "@ionic/storage": "1.1.6",
     "ionic-angular": "2.2.0",
-    "ionic-native": "2.5.1",
+    "ionic-native": "2.8.1",
     "ionicons": "3.0.0",
-    "karma-cli": "1.0.1",
     "rxjs": "5.0.1",
-    "sw-toolbox": "3.6.0",
+    "sw-toolbox":"3.6.0",
     "zone.js": "0.7.2"
   },
-  "description": "Ionic 2 Tutorial App",
   "devDependencies": {
-    "codecov": "1.0.1",
     "@ionic/app-scripts": "1.1.4",
-    "jasmine-core": "2.5.2",
-    "jasmine-spec-reporter": "3.2.0",
-    "karma": "1.5.0",
-    "karma-chrome-launcher": "2.0.0",
-    "karma-jasmine": "1.1.0",
-    "karma-mocha-reporter": "2.2.2",
-    "karma-remap-istanbul": "0.6.0",
-    "ts-node": "2.1.0",
-    "tslint": "4.5.1",
-    "tslint-eslint-rules": "3.4.0",
-    "typescript": "2.2.1",
-    "@types/jasmine": "2.5.43",
-    "@types/node": "7.0.7"
+    "typescript": "2.2.1"
   },
-  "homepage": "https://github.com/bwhittington/Ionic2Tutorial",
-  "name": "io.cordova.myapp0524e3",
-  "private": true,
-  "scripts": {
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
-  },
-  "version": "0.0.1",
+  "description": "Ionic2Blank: An Ionic project",
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [],
   "-vs-binding": { "BeforeBuild": [ "ionic:build" ] }
 }
