@@ -1,7 +1,5 @@
-﻿// location: src/app/courses/shared/course.model.ts
-
-export class Course {
-    id: number;
-    name: string;
-    syllabus: string;
+﻿export class Course {
+    public id: number;
+    public name: string;
+    public syllabus: string;
 }

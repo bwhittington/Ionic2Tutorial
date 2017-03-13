@@ -1,4 +1,4 @@
-﻿import { Course } from './course.model'
+﻿import { Course } from './course.model';
 
 export const courses: Course[] = [
     { id: 1, name: 'C#/.NET', syllabus:'' },
