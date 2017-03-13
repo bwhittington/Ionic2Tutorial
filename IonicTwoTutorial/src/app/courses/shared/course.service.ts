@@ -3,9 +3,9 @@ import { courses } from './course.mocks';
 
 @Injectable()
 export class CourseService {
-    constructor() { }
+    // constructor() { }
 
-    public getCourses() {
+    public getCourses(): any {
         return courses;
     }
 }

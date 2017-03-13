@@ -8,5 +8,4 @@ export const courses: Course[] = [
     { id: 5, name: 'JavaScript', syllabus: '' },
     { id: 6, name: 'SQL', syllabus: '' },
     { id: 7, name: 'Cordova', syllabus: '' },
-    { id: 8, name: 'Consulting Book', syllabus: '' }
-];
+    { id: 8, name: 'Consulting Book', syllabus: '' }];

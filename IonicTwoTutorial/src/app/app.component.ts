@@ -4,16 +4,15 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from './home/home.module';
 
-@Component({
-  templateUrl: 'app.html'
-})
-export class MyApp {
-  rootPage = HomePage;
+@Component({ templateUrl: 'app.html' })
 
-  constructor(platform: Platform) {
-    platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
-    });
-  }
+export class MyApp {
+    public rootPage: HomePage;
+
+    constructor(platform: Platform) {
+        platform.ready().then(() => {
+            StatusBar.styleDefault();
+            Splashscreen.hide();
+        });
+    }
 }

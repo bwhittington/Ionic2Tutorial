@@ -7,22 +7,9 @@ import { Courses } from './courses/courses.module';
 import { CourseList } from './courses/course-list/course-list.component';
 
 @NgModule({
-    declarations: [
-        MyApp,
-        HomePage,
-        Courses,
-        CourseList
-    ],
-    imports: [
-        IonicModule.forRoot(MyApp),
-    ],
+    declarations:  [MyApp, HomePage, Courses, CourseList ],
+    imports: [IonicModule.forRoot(MyApp)],
     bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        HomePage,
-        Courses,
-        CourseList
-    ],
-    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
-})
+    entryComponents: [ MyApp, HomePage, Courses, CourseList],
+    providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]})
 export class AppModule { }

@@ -13,7 +13,7 @@
       "check-space"
     ],
     "curly": false,
-    "eofline": true,
+    "eofline": false,
     "forin": false,
     "indent": [
       true,

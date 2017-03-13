@@ -2,21 +2,21 @@
 
 @Injectable()
 export class ToastService {
-    message: string;
+    private message: string;
 
     private toastCount: number;
 
-    hide() {
+    public hide(): void {
         this.toastCount--;
         this.log();
     }
 
-    show() {
+    public show(): void {
         this.toastCount++;
         this.log();
     }
 
-    private log() {
+    private log(): void {
         console.log(this.message);
     }
 }

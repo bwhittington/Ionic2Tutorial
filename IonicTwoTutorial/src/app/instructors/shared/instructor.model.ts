@@ -1,6 +1,7 @@
 ﻿// location: src/app/instructors/shared/intructor.model.ts
 
 export class Instructor {
-    Name: string;
-    Title: string;
+    public firstName: string;
+    public lastName: string;
+    public title: string;
 }
