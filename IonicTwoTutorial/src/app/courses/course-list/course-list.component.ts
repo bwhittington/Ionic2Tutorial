@@ -2,7 +2,7 @@
 import { NavController } from 'ionic-angular';
 
 import { CourseService } from '../shared/course.service';
-import { Course } from './course/course.component';
+import { Course } from '../course/course.component';
 
 @Component({
     selector: 'course-list',
@@ -11,12 +11,13 @@ import { Course } from './course/course.component';
 export class CourseList {
 
     public courses: Array<Object>;
-    private courseService: CourseService;
-    private navCtrl: NavController;
+    public courseService: CourseService;
+    public navCtrl: NavController;
 
-    constructor(courseService: CourseService, ) {
+    constructor(courseService: CourseService, navCtrl: NavController ) {
         this.courseService = courseService;
         this.courses = this.courseService.getCourses();
+        this.navCtrl = navCtrl;
     }
 
     public goToCourse(): void {

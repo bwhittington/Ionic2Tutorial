@@ -9,3 +9,11 @@ export const courses: Course[] = [
     { id: 6, name: 'SQL', syllabus: '' },
     { id: 7, name: 'Cordova', syllabus: '' },
     { id: 8, name: 'Consulting Book', syllabus: '' }];
+
+export class CourseServiceMock {
+    // constructor() { }
+
+    public getCourses(): any {
+        return [];
+    }
+}

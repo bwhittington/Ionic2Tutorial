@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage } from './home/home.module';
+import { HomeModule } from './home/home.module';
 
 @Component({ templateUrl: 'app.html' })
 
 export class MyApp {
-    public rootPage: HomePage;
+    rootPage = HomeModule;
 
     constructor(platform: Platform) {
         platform.ready().then(() => {

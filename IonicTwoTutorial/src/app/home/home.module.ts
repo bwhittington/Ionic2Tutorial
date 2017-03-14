@@ -7,7 +7,7 @@ import { Courses } from '../courses/courses.module';
     selector: 'page-home',
     templateUrl: 'home.html'})
 
-export class HomePage {
+export class HomeModule {
 
     private navCtrl: NavController;
 
