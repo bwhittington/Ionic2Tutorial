@@ -7,7 +7,7 @@ import { HomeModule } from './home/home.module';
 @Component({ templateUrl: 'app.html' })
 
 export class MyApp {
-    rootPage = HomeModule;
+    public rootPage = HomeModule;
 
     constructor(platform: Platform) {
         platform.ready().then(() => {

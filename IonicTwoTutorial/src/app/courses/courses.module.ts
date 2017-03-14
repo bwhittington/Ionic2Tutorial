@@ -1,18 +1,27 @@
-﻿import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+﻿import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
-import { CourseService } from './shared/course.service';
+import { Courses } from './courses.component';
+import { CourseList } from './course-list/course-list.component';
+import { Course } from './course/course.component';
+import { CourseService } from './shared/course.service'
 
-@Component({
-    selector: 'page-courses',
-    templateUrl: 'courses.html',
-    providers: [CourseService] })
+@NgModule({
+    imports: [
+        IonicModule.forRoot(Courses)
+    ],
+    declarations: [
+        Courses,
+        CourseList,
+        Course
+    ],
+    bootstrap: [IonicApp],
+    exports: [
+        Courses,
+        CourseList,
+        Course
+    ],
+    providers: [CourseService, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+})
 
-export class Courses {
-
-    public navCtrl: NavController;
-
-    constructor(navCtrl: NavController) {
-        this.navCtrl = navCtrl;
-    }
-}
+export class CoursesModule { }

@@ -8,4 +8,8 @@ export class CourseService {
     public getCourses(): any {
         return courses;
     }
+
+    public getCourse(id): any {
+        return courses.find(x => x.id === id);
+    }
 }

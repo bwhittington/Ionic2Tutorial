@@ -3,14 +3,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomeModule } from './home/home.module';
-import { Courses } from './courses/courses.module';
-import { CourseList } from './courses/course-list/course-list.component';
-import { Course } from './courses/course/course.component';
+import { CoursesModule } from './courses/courses.module';
+
 
 @NgModule({
-    declarations: [MyApp, HomeModule, Courses, CourseList, Course ],
-    imports: [IonicModule.forRoot(MyApp)],
+    declarations: [ MyApp, HomeModule ],
+    imports: [IonicModule.forRoot(MyApp), CoursesModule],
     bootstrap: [IonicApp],
-    entryComponents: [MyApp, HomeModule, Courses, CourseList, Course ],
+    entryComponents: [ MyApp, HomeModule ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]})
 export class AppModule { }

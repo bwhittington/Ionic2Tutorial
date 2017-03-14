@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { Courses } from '../courses/courses.module';
+import { Courses } from '../courses/courses.component';
 
 @Component({
     selector: 'page-home',
