@@ -20,7 +20,7 @@ export class CourseList {
         this.navCtrl = navCtrl;
     }
 
-    public goToCourse(): void {
-        this.navCtrl.push(Course);
+    public goToCourse(id): void {
+        this.navCtrl.push(Course, { 'id': id });
     }
 }

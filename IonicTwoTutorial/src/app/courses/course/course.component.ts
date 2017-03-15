@@ -14,8 +14,10 @@ export class Course {
     public navCtrl: NavController;
     public navParams: NavParams;
 
-    constructor(courseService: CourseService, navCtrl: NavController, navParams: NavParams) {
+    constructor(navCtrl: NavController, navParams: NavParams, courseService: CourseService) {
         this.courseService = courseService;
+        this.navParams = navParams;
+
         var id = this.navParams.get('id');
         this.course = this.courseService.getCourse(id);
     }
