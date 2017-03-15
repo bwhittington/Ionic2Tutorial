@@ -52,22 +52,18 @@ export class TestUtils {
     public static configureIonicTestingModule(components: Array<any>): typeof TestBed {
         return TestBed.configureTestingModule({
             declarations: [
-                ...components,
-            ],
+                ...components],
             providers: [
                 App, Form, Keyboard, DomController, MenuController, NavController, GestureController,
                 { provide: Platform, useClass: PlatformMock },
                 { provide: Config, useClass: ConfigMock },
                 { provide: NavParams, useClass: NavParamsMock },
-                CourseService
-            ],
+                CourseService],
             imports: [
                 FormsModule,
                 IonicModule,
-                ReactiveFormsModule,
-            ],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA]
-        });
+                ReactiveFormsModule],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA] });
     }
 
     public static eventFire(el: any, etype: string): void {

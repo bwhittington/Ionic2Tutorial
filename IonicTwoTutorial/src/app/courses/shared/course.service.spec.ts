@@ -1,6 +1,7 @@
 ﻿import { CourseService } from './course.service';
+import { CourseModel } from './course.model';
 
-let courseService;
+let courseService: CourseService;
 
 describe('Service: Courses', () => {
 
@@ -9,8 +10,8 @@ describe('Service: Courses', () => {
     });
 
     it('should have a non empty array called courses', () => {
-
-        let courses = courseService.getCourses();
+        let courses: Array<CourseModel>;
+        courses = courseService.getCourses();
 
         expect(Array.isArray(courses)).toBeTruthy();
         expect(courses.length).toBeGreaterThan(0);
@@ -18,7 +19,8 @@ describe('Service: Courses', () => {
     });
 
     it('should return specified course when requested by Id', () => {
-        let course = courseService.getCourse(1);
+        let course: CourseModel;
+        course = courseService.getCourse(1);
 
         expect(course.id).toBe(1);
         expect(course.name).toBe('C#/.NET');

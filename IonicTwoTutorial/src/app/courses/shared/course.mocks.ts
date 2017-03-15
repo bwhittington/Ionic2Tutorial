@@ -1,6 +1,6 @@
-﻿import { Course } from './course.model';
+﻿import { CourseModel } from './course.model';
 
-export const courses: Course[] = [
+export const courses: CourseModel[] = [
     { id: 1, name: 'C#/.NET', syllabus: '' },
     { id: 2, name: 'HTML/CSS/Responsive', syllabus: '' },
     { id: 3, name: 'MVC/Web API', syllabus: '' },

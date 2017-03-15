@@ -9,7 +9,7 @@ import { CourseService } from './shared/course.service';
 @NgModule({
     imports: [ IonicModule.forRoot(Courses) ],
     declarations: [ Courses, CourseList, Course ],
-    entryComponents: [ Courses, CourseList, Course ],
+    entryComponents:  [Courses, CourseList, Course ],
     bootstrap: [ IonicApp ],
     exports: [ Courses, CourseList, Course ],
     providers: [ CourseService, { provide: ErrorHandler, useClass: IonicErrorHandler }]})

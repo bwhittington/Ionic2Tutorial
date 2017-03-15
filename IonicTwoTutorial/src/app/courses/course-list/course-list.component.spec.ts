@@ -5,11 +5,11 @@ import { } from 'jasmine';
 
 import { TestUtils } from '../../../test';
 import { CourseList } from './course-list.component';
-import { CourseService } from '../shared/course.service'
+import { CourseService } from '../shared/course.service';
 
 let fixture: ComponentFixture<CourseList> = null;
 let instance: any = null;
-let de: DebugElement;
+let de: HTMLElement;
 let el: HTMLElement;
 
 describe('Component: Course List', () => {
@@ -29,16 +29,15 @@ describe('Component: Course List', () => {
     });
 
     it('displays courses by title', () => {
+        let courseService: CourseService;
+        let firstCourse: any;
 
-        let courseService = fixture.debugElement.injector.get(CourseService);
-        let firstCourse = courseService.getCourses()[0];
+        fixture.debugElement.injector.get(CourseService);
 
         fixture.detectChanges();
 
-        de = fixture.debugElement.query(By.css('ion-list ion-item'));
-        el = de.nativeElement;
+        el = fixture.nativeElement;
 
-        expect(el.textContent).toContain(firstCourse.name);
-
+        expect(el.querySelector('button').innerHTML).toBe('C#/.NET');
     });
 });

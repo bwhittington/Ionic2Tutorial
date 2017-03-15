@@ -8,11 +8,12 @@ import { HomeModule } from './home/home.module';
 
 export class MyApp {
     public rootPage = HomeModule;
+    private platform: Platform;
 
     constructor(platform: Platform) {
+        this.platform = platform;
         platform.ready().then(() => {
             StatusBar.styleDefault();
-            Splashscreen.hide();
-        });
+            Splashscreen.hide(); });
     }
 }

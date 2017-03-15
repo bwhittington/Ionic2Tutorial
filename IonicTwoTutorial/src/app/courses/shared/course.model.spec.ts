@@ -1,11 +1,11 @@
-﻿import { Course } from './course.model';
+﻿import { CourseModel } from './course.model';
 
-let course;
+let course: CourseModel;
 
 describe('Model: Courses', () => {
 
     beforeEach(() => {
-        course = new Course();
+        course = new CourseModel();
     });
 
     it('should return the correct properties', () => {

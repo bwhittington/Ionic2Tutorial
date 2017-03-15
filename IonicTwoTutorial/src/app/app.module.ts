@@ -5,7 +5,6 @@ import { MyApp } from './app.component';
 import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 
-
 @NgModule({
     declarations: [ MyApp, HomeModule ],
     imports: [IonicModule.forRoot(MyApp), CoursesModule],

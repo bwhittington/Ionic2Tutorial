@@ -1,12 +1,13 @@
 ﻿import { ComponentFixture, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core'
-import { NavParams } from 'ionic-angular';;
+import { DebugElement } from '@angular/core';
 import { } from 'jasmine';
 
 import { TestUtils } from '../../../test';
 import { Course } from './course.component';
-import { CourseService } from '../shared/course.service'
+import { CourseModel } from '../shared/course.model';
+import { CourseService } from '../shared/course.service';
+import { NavParamsMock } from '../../../mocks';
 
 let fixture: ComponentFixture<Course> = null;
 let instance: any = null;
@@ -30,9 +31,11 @@ describe('Component: Course', () => {
     });
 
     it('displays a detailed view with heading including the course name', () => {
+        let courseService: CourseService;
+        let firstCourse: CourseModel;
 
-        let courseService = fixture.debugElement.injector.get(CourseService);
-        let firstCourse = courseService.getCourse(1);
+        courseService = fixture.debugElement.injector.get(CourseService);
+        firstCourse = courseService.getCourse(1);
 
         fixture.detectChanges();
 
@@ -44,9 +47,11 @@ describe('Component: Course', () => {
     });
 
     it('displays a detailed view with content including the course syllabus', () => {
+        let courseService: CourseService;
+        let firstCourse: any;
 
-        let courseService = fixture.debugElement.injector.get(CourseService);
-        let firstCourse = courseService.getCourse(1);
+        courseService = fixture.debugElement.injector.get(CourseService);
+        firstCourse = courseService.getCourse(1);
 
         fixture.detectChanges();
 

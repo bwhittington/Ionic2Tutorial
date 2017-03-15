@@ -13,6 +13,7 @@ export class CourseList {
     public courses: Array<Object>;
     public courseService: CourseService;
     public navCtrl: NavController;
+    private id: number;
 
     constructor(courseService: CourseService, navCtrl: NavController ) {
         this.courseService = courseService;
@@ -20,7 +21,8 @@ export class CourseList {
         this.navCtrl = navCtrl;
     }
 
-    public goToCourse(id): void {
-        this.navCtrl.push(Course, { 'id': id });
+    public goToCourse(id: number): void {
+        this.id = id;
+        this.navCtrl.push(Course, { 'id': this.id });
     }
 }
