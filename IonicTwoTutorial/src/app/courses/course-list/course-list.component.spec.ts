@@ -9,7 +9,7 @@ import { CourseService } from '../shared/course.service';
 
 let fixture: ComponentFixture<CourseList> = null;
 let instance: any = null;
-let de: HTMLElement;
+let de: DebugElement;
 let el: HTMLElement;
 
 describe('Component: Course List', () => {
@@ -36,8 +36,9 @@ describe('Component: Course List', () => {
 
         fixture.detectChanges();
 
-        el = fixture.nativeElement;
+        de = fixture.debugElement.query(By.css('ion-list button'));
+        el = de.nativeElement;
 
-        expect(el.querySelector('button').innerHTML).toBe('C#/.NET');
+        expect(el.textContent).toBe('C#/.NET');
     });
 });

@@ -1,26 +1,45 @@
-﻿import { ComponentFixture, async } from '@angular/core/testing';
+﻿import { ComponentFixture, TestBed, inject, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { } from 'jasmine';
+import { App, Config, Form, IonicModule, Keyboard, DomController, MenuController, NavController, NavParams, GestureController, Platform } from 'ionic-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { TestUtils } from '../../../test';
+import { ConfigMock, PlatformMock, NavParamsMock } from '../../../mocks';
 import { Course } from './course.component';
 import { CourseModel } from '../shared/course.model';
 import { CourseService } from '../shared/course.service';
-import { NavParamsMock } from '../../../mocks';
 
-let fixture: ComponentFixture<Course> = null;
-let instance: any = null;
+let instance: Course;
+let fixture: ComponentFixture<Course>;
 let de: DebugElement;
 let el: HTMLElement;
 
 describe('Component: Course', () => {
 
-    beforeEach(async(() => TestUtils.beforeEachCompiler([Course]).then(compiled => {
-        fixture = compiled.fixture;
-        instance = compiled.instance;
-        fixture.detectChanges();
-    })));
+    beforeEach(async(() =>
+    {
+        NavParamsMock.setParams('id', 1);
+        TestBed.configureTestingModule({
+            declarations: [Course],
+            providers: [
+                App, Form, Keyboard, DomController, MenuController, NavController, GestureController,
+                { provide: Platform, useClass: PlatformMock },
+                { provide: Config, useClass: ConfigMock },
+                { provide: NavParams, useClass: NavParamsMock },
+                CourseService],
+            imports: [
+                FormsModule,
+                IonicModule,
+                ReactiveFormsModule],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        });
+    }));
+
+    beforeEach(() => {
+        fixture = TestBed.createComponent(Course);
+                instance = fixture.componentInstance;
+        });
 
     afterEach(() => {
         fixture.destroy();
@@ -32,33 +51,33 @@ describe('Component: Course', () => {
 
     it('displays a detailed view with heading including the course name', () => {
         let courseService: CourseService;
-        let firstCourse: CourseModel;
+        let courseModel: CourseModel;
 
         courseService = fixture.debugElement.injector.get(CourseService);
-        firstCourse = courseService.getCourse(1);
-
+   
         fixture.detectChanges();
 
-        de = fixture.debugElement.query(By.css('ion-card ion-card-header'));
+        courseModel = instance.courseModel;
+        de = fixture.debugElement.query(By.css('ion-card-header'));
         el = de.nativeElement;
 
-        expect(el.textContent).toContain(firstCourse.name);
+        expect(el.textContent).toContain(courseModel.name);
 
     });
 
     it('displays a detailed view with content including the course syllabus', () => {
         let courseService: CourseService;
-        let firstCourse: any;
+        let courseModel: CourseModel;
 
         courseService = fixture.debugElement.injector.get(CourseService);
-        firstCourse = courseService.getCourse(1);
 
         fixture.detectChanges();
 
-        de = fixture.debugElement.query(By.css('ion-card ion-card-content'));
+        courseModel = instance.courseModel;
+        de = fixture.debugElement.query(By.css('ion-card-content'));
         el = de.nativeElement;
 
-        expect(el.textContent).toContain(firstCourse.syllabus);
+        expect(el.textContent).toContain(courseModel.syllabus);
 
     });
 });

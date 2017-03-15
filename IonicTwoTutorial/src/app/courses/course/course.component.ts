@@ -11,11 +11,11 @@ import { CourseModel } from '../shared/course.model';
 
 export class Course {
 
-    @Input() courseModel: CourseModel;
+    public courseModel: CourseModel;
     public courseService: CourseService;
     public navCtrl: NavController;
     public navParams: NavParams;
-    private id: number;
+    public id: number;
 
     constructor(navCtrl: NavController, navParams: NavParams, courseService: CourseService) {
         this.courseService = courseService;
